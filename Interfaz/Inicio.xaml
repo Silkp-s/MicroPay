@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Avance.Interfaz.Inicio"
+
+             Title="Inicio">
+    <!-- Primera pagina(Inicio) -->
+    <ContentPage Title="Inicio">
+        <ScrollView>
+            <VerticalStackLayout Spacing="20">
+                <Label
+                Text="Gestión de Tarjetas"
+                FontSize="30"
+                FontAttributes="Bold"
+                />
+                <Image
+                Source="https://cdn4.iconfinder.com/data/icons/basic-flat-ui-extra-set-200-item/76/ui_ux_minimalist_button_profile_contact_people-512.png"
+                HeightRequest="100"
+                HorizontalOptions="Center"
+                    
+                />
+
+                <Label Text="Agregar Tarjeta" 
+                   FontSize="20" 
+                   HorizontalOptions="CenterAndExpand" 
+                   VerticalOptions="CenterAndExpand" />
+
+                <StackLayout Spacing="25">
+
+                    <!-- Seccion Agregar Tarjeta -->
+
+                    <Entry x:Name="numeroTarjetaEntry"
+                           Placeholder="Número de Tarjeta" 
+                           WidthRequest="250"/>
+
+                    <Entry x:Name="ccvEntry"
+                           Placeholder="CCV" 
+                           WidthRequest="250"/>
+
+                    <Entry x:Name="fechaVencimientoEntry"
+                       Placeholder="Fecha de Vencimiento (MM/YY)"
+                       WidthRequest="250"/>
+
+                    <Button Text="Agregar Tarjeta" 
+                        Clicked="AgregarTarjeta_Clicked" 
+                        WidthRequest="150"/>
+                </StackLayout>
+
+                <!-- Eliminar Tarjeta -->
+                <StackLayout Spacing="25">
+                    <Label Text="Eliminar Tarjeta" 
+                       FontSize="16"
+                       HorizontalOptions="Center"/>
+
+                    <Entry x:Name="eliminarNumeroTarjetaEntry"
+                       Placeholder="Número de Tarjeta a Eliminar" 
+                       WidthRequest="250"/>
+
+                    <Button Text="Eliminar Tarjeta" 
+                        Clicked="EliminarTarjeta_Clicked"
+                        WidthRequest="150"/>
+                </StackLayout>
+
+                <!-- Ver Tarjetas -->
+                <Label Text="Tus Tarjetas: "
+                   FontSize="16"
+                   HorizontalOptions="Center"/>
+                    
+                <Label Text="Tus Tarjetas: " FontSize="16" />
+                <Label Text="__________________________________________________________" FontSize="16" />
+                <ListView x:Name="listaTarjetas">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </ContentPage>
+
+    <!-- Segunda Pagina (Recargar Tarjeta)-->
+    <ContentPage Title="Recarga">
+        <ScrollView>
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" Spacing="15">
+
+                <Label
+                Text="Ñuble Bus"
+                FontSize="35"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+                
+                <Label
+                Text="Pasajero General"
+                FontSize="17"
+                HorizontalOptions="Center" />
+
+                <Image
+                Source="https://static.vecteezy.com/system/resources/thumbnails/014/967/268/small_2x/credit-card-illustration-in-minimal-style-png.png"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+                <Label Text="Recarga de Tarjeta" FontSize="24" HorizontalOptions="CenterAndExpand" />
+
+                <Entry x:Name="tarjetaNumeroEntry" Placeholder="Número de Tarjeta" HorizontalOptions="Center" WidthRequest="150" />
+                <Entry x:Name="montoRecargaEntry" Placeholder="Monto de Recarga" HorizontalOptions="Center" WidthRequest="150" MaxLength="4" />
+
+                <Button Text="Recargar" Clicked="RecargarTarjeta_Clicked"  HorizontalOptions="Center" WidthRequest="150" />
+                
+                <ScrollView>
+                    <StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage>
+
+    <ContentPage Title="Contactanos">
+        <ScrollView>
+            <VerticalStackLayout HorizontalOptions="Center" Spacing="15">
+
+
+                <Image
+                Source="https://w7.pngwing.com/pngs/762/452/png-transparent-grace-covenant-church-computer-icons-gps-navigation-systems-location-pin-location-text-orange-logo-thumbnail.png"
+                WidthRequest="100"
+                HorizontalOptions="Center"
+                />
+
+                <Label
+                Text="Ubicacion"
+                FontSize="28"
+                HorizontalOptions="Center" />
+
+                <Label
+                Text="Colón 2766,Talcahuano,BioBio"
+                FontSize="20"
+                HorizontalOptions="Center" />
+
+                <Label
+                Text="Concepción"
+                FontSize="20"
+                HorizontalOptions="Center" />
+
+                <Label
+                Text="Horario de Atención"
+                FontSize="28"
+                HorizontalOptions="Center" />
+
+                <Label
+                Text="Oficina de atención a Clientes"
+                FontSize="20"
+                HorizontalOptions="Center" />
+
+                <Label
+                Text="Concepcion:Lunes a Viernes de 08:00"
+                FontSize="20"
+                HorizontalOptions="Center" />
+
+                <Label
+                Text="a 13:00 y de 14:00 a 18:30hrs."
+                FontSize="20"
+                HorizontalOptions="Center" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    
+                    <Button
+                    x:Name="Whatsapp"
+                    Text="+56996744590"
+                    HorizontalOptions="Center"
+                    HeightRequest="50"/>
+
+                    <Button
+                    x:Name="Contacto"
+                    Text="+56937303037"
+                    HorizontalOptions="Center"
+                    HeightRequest="50"/>
+
+
+                </StackLayout>
+                <Button
+            x:Name="Cerrar"
+            Text="Cerrar Sesion"
+            HorizontalOptions="Center"
+            HeightRequest="50"
+                    TextColor="Red"
+            Clicked="Cerrar_Clicked"/>
+            
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage>
+</TabbedPage>
+
+
+
+

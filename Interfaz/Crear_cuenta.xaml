@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Avance.Interfaz.Crear_cuenta"
+             Title="Creación de Cuenta">
+    <ScrollView>
+
+        <StackLayout Spacing="25" Padding="30">
+
+            <Image
+                Source="https://assets.stickpng.com/images/585e4beacb11b227491c3399.png"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Ingrese su Informacion"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Entry x:Name="Rut"
+                Placeholder="Rut"
+               MaxLength="12" 
+               HorizontalOptions="Center"
+                    WidthRequest="250"
+                   />
+
+            <Entry x:Name="Nombre"
+                   Placeholder="Nombre"
+                   HorizontalOptions="Center"
+                   WidthRequest="250"
+                   />
+
+            <Entry x:Name="ApellidoPat"
+                   Placeholder=" Apellido Paterno"
+                   HorizontalOptions="Center"
+                   WidthRequest="250"
+                
+                />
+
+            <Entry x:Name="ApellidoMat"
+                Placeholder="Apellido Materno"
+                HorizontalOptions="Center"
+                   WidthRequest="250"
+                />
+
+            <Entry x:Name="Correo"
+                Placeholder="Correo Electronico"
+               HorizontalOptions="Center"
+                    WidthRequest="250"
+                   />
+
+            <Entry x:Name="Contrasena"
+                Placeholder="Contraseña"
+                HorizontalOptions="Center"
+                WidthRequest="250"
+                   IsPassword="True"/>
+
+            <Label
+                Text="Fecha de nacimiento"
+                HorizontalOptions="Center"
+                />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10">
+
+                <Entry x:Name="Dia" 
+                Placeholder="Día"
+                HorizontalOptions="FillAndExpand" />
+
+                <Entry x:Name="Mes" 
+                Placeholder="Mes" 
+                HorizontalOptions="FillAndExpand" />
+
+                <Entry x:Name="Anio" Placeholder="Año"
+                HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+
+            <Label Text="Selecione su Sexo"
+                   HorizontalOptions="Center"/>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+
+
+                <RadioButton x:Name="Mas" 
+                         Content="Masculino" 
+                         GroupName="Sexo"
+                         IsChecked="True"/>
+
+                <RadioButton x:Name="Fem" 
+                             Content="Femenino"
+                             GroupName="Sexo"/>
+            </StackLayout>
+
+            <Button
+                x:Name="Cuenta"
+                Text="Crear Cuenta"
+                Clicked="Cuenta_Clicked"
+                HorizontalOptions="Center" />
+            <Button
+                x:Name="MostrarDatos"
+                Text="Mostras Datos de Usuario"
+                Clicked="MostrarDatosButton_Clicked"
+                HorizontalOptions="Center"/>
+
+        </StackLayout>
+
+    </ScrollView>
+
+
+</ContentPage>

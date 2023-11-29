@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Avance.MainPage"
+             Title="Iniciar Sesión">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="15"
+            Padding="25,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="https://cdn4.iconfinder.com/data/icons/basic-flat-ui-extra-set-200-item/76/ui_ux_minimalist_button_profile_contact_people-512.png"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Bienvenido"
+                FontSize="32"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+            <Label
+             Text="Correo"
+            FontSize="20"
+            HorizontalOptions="Center" />
+
+            <Entry x:Name="Correo"
+                 Placeholder="Correo Electronico"
+                 HorizontalOptions="Center"
+                 WidthRequest="250"/>
+
+            <Label
+                Text="Contraseña"
+                FontSize="20"
+                HorizontalOptions="Center"
+                />
+
+            <Entry x:Name="Contrasena"
+                Placeholder="Contraseña"
+                HorizontalOptions="Center"
+                WidthRequest="250"
+                   IsPassword="True"/>
+            <StackLayout >
+                <Button
+                    x:Name="Iniciar"
+                    Text="Iniciar Sesión"
+                    Clicked="Iniciar_Clicked"
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                    />
+
+                <Button
+                    x:Name="Crear"
+                    Text="Crear Cuenta"
+                    Clicked="Crear_Clicked"
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                    />
+
+            </StackLayout>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
