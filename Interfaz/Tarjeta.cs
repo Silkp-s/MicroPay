@@ -10,14 +10,9 @@ namespace Avance.Interfaz
 {
     public class Tarjeta
     {
-        //SQLiteAsyncConnection Database;
-
-        public Tarjeta()
-        {
-
-        }
-
-
+        public int NumeroTarjeta { set;get; }   
+        public int CCV { set;get; } 
+        public DateTime FechaVencimiento { set;get; }
 
     }
 }

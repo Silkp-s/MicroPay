@@ -16,14 +16,10 @@ public partial class Inicio : TabbedPage
         listaTarjetas.ItemsSource = tarjetas;
 
         databasePath = Path.Combine(FileSystem.AppDataDirectory, "Tarjetas.db");
-
-
         //Crea la conexion 
         var strConect = "Data source = Tarjetas.db";
         SqliteConnection connection = new SqliteConnection(strConect);
       
-
-
     }
 
     private void AgregarTarjeta_Clicked(object sender, EventArgs e)
@@ -43,8 +39,6 @@ public partial class Inicio : TabbedPage
             string nuevaTarjeta = $"CCV: {ccv}, Número de Tarjeta: {numeroTarjeta}, Fecha de Vencimiento: {fechaVencimiento}";
             tarjetas.Add(nuevaTarjeta);
             DisplayAlert("Tarjeta Agregada", "Tarjeta agregada exitosamente.", "OK");
-
-
         }
     }
 
@@ -74,23 +68,24 @@ public partial class Inicio : TabbedPage
 
                 using (var command = connection.CreateCommand())
                 {
-                    // Insertar datos
+                    // Comandos para insertar datos
                     command.CommandText = "INSERT INTO Tarjeta (numTarjeta, CCV) VALUES (@numTarjeta, @CCV)";
                     command.Parameters.Add("@numTarjeta", SqliteType.Integer);
                     command.Parameters.Add("@CCV", SqliteType.Integer);
 
-                    command.Parameters["@numTarjeta"].Value = Convert.ToInt64(numeroTarjeta);
-                    command.Parameters["@CCV"].Value = Convert.ToInt32(ccv);
+                    command.Parameters["@numTarjeta"].Value = Convert.ToInt64(numeroTarjeta);//Inserta el número de la tarjeta por teclado
+                    command.Parameters["@CCV"].Value = Convert.ToInt32(ccv);//Inserta el CCV por teclado
 
                     int filasAfectadas = command.ExecuteNonQuery();
                 }
             }
         }
-        catch (Exception ex)
+        catch (Exception ex) // En caso de que no funcione la base de datos muestra el error en un Display Alert 
         {
-            // Manejar la excepción (por ejemplo, mostrar un mensaje de error)
+           
             DisplayAlert("Error", $"Error al agregar datos a la base de datos: {ex.Message}", "OK");
         }
+        // En la base de datos datos esta agregada la tarjeta 1,1 de ejemplo
     }
     private void RecargarTarjeta_Clicked(object sender, EventArgs e)
     {
@@ -118,7 +113,7 @@ public partial class Inicio : TabbedPage
     {
         string numeroTarjetaEliminar = eliminarNumeroTarjetaEntry.Text;
 
-        var tarjetaAEliminar = tarjetas.FirstOrDefault(tarjeta => tarjeta.Contains(numeroTarjetaEliminar));
+        var tarjetaAEliminar = tarjetas.FirstOrDefault(tarjeta => tarjeta.Contains(numeroTarjetaEliminar)); //Por ahora solo elimina la tarjeta visualmente no de la base de datos 
 
         if (tarjetaAEliminar != null)
         {

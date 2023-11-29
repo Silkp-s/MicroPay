@@ -19,6 +19,5 @@ namespace Avance.Interfaz
     public class Administrador : Usuario 
     {
             //El admin modifica datos
-
     }
 }
