@@ -19,7 +19,7 @@ public partial class Inicio : TabbedPage
         //Crea la conexion 
         var strConect = "Data source = Tarjetas.db";
         SqliteConnection connection = new SqliteConnection(strConect);
-      
+
     }
 
     private void AgregarTarjeta_Clicked(object sender, EventArgs e)
