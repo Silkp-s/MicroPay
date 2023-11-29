@@ -61,11 +61,7 @@
                         WidthRequest="150"/>
                 </StackLayout>
 
-                <!-- Ver Tarjetas -->
-                <Label Text="Tus Tarjetas: "
-                   FontSize="16"
-                   HorizontalOptions="Center"/>
-                    
+                <!-- Ver Tarjetas -->                    
                 <Label Text="Tus Tarjetas: " FontSize="16" />
                 <Label Text="__________________________________________________________" FontSize="16" />
                 <ListView x:Name="listaTarjetas">
@@ -86,7 +82,7 @@
             <StackLayout Orientation="Vertical" HorizontalOptions="Center" Spacing="15">
 
                 <Label
-                Text="Ñuble Bus"
+                Text="MicroPay"
                 FontSize="35"
                 FontAttributes="Bold"
                 HorizontalOptions="Center" />
