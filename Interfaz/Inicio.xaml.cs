@@ -56,7 +56,7 @@ public partial class Inicio : TabbedPage
 
             using (var connection = new SqliteConnection($"Data Source={databasePath}"))
             {
-                connection.Open();
+                connection.Open();//se abre la conexio
 
                 using (var command = connection.CreateCommand())
                 {
